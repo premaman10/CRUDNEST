@@ -1,53 +1,133 @@
-Todo List API
-A RESTful API for a Todo List application built with Node.js, Express, MongoDB Atlas, and JWT authentication. Users can register, log in, and perform CRUD operations (Create, Read, Update, Delete) on todos, with all routes protected by token-based authentication.
-Features
+# 📝 Todo List API  
 
-User registration and login with JWT.
-Create, read, update, and delete todos.
-Todos are user-specific (stored in MongoDB Atlas).
-Deployable to Vercel as a serverless API.
+A **RESTful API** for a Todo List application built with **Node.js, Express, MongoDB Atlas, and JWT authentication**.  
+Users can **register, log in, and perform CRUD operations** (Create, Read, Update, Delete) on todos.  
+All routes are protected using **JWT-based authentication**.  
 
-Tech Stack
+🚀 Fully deployable to **Vercel** as a serverless API.  
 
-Node.js & Express: Backend framework.
-MongoDB Atlas: Cloud database for storing users and todos.
-Mongoose: ODM for MongoDB.
-JWT: Token-based authentication.
-Bcryptjs: Password hashing.
-Vercel: Deployment platform.
+---
 
-Setup
+## ✨ Features  
 
-Clone the repository:git clone https://github.com/yourusername/todo-api.git
+- 🔐 **JWT Authentication** (Register & Login)  
+- ➕ **Create** todos  
+- 📖 **Read** user-specific todos  
+- ✏️ **Update** todos (toggle completion)  
+- ❌ **Delete** todos  
+- ☁️ **MongoDB Atlas** for cloud-based storage  
+- ⚡ **Vercel** serverless deployment  
+
+---
+
+## 🛠️ Tech Stack  
+
+- **Node.js & Express** → Backend framework  
+- **MongoDB Atlas** → Cloud database  
+- **Mongoose** → ODM for MongoDB  
+- **JWT** → Token-based authentication  
+- **Bcryptjs** → Password hashing  
+- **Vercel** → Deployment platform  
+
+---
+
+## ⚙️ Setup  
+
+### 1. Clone the Repository  
+```bash
+git clone https://github.com/premaman10/todo-api.git
 cd todo-api
+````
 
+### 2. Install Dependencies
 
-Install dependencies:npm install
+```bash
+npm install
+```
 
+### 3. Configure Environment Variables
 
-Create a .env file with:MONGO_URI=mongodb+srv://<username>:<password>@cluster0.abzrevk.mongodb.net/todoDB?retryWrites=true&w=majority
+Create a **.env** file in the project root:
+
+```env
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/todoDB?retryWrites=true&w=majority
 PORT=5000
 JWT_SECRET=your_jwt_secret
+```
 
+### 4. Run Locally
 
-Run locally:npm run dev
+```bash
+npm run dev
+```
 
+---
 
+## 🔑 API Endpoints
 
-API Endpoints
+### Authentication
 
-POST /api/auth/register: Register a user ({ "username": "test", "password": "pass" }).
-POST /api/auth/login: Log in and get JWT ({ "username": "test", "password": "pass" }).
-GET /api/todos: Get all todos (requires Authorization: Bearer <token>).
-POST /api/todos: Create a todo ({ "text": "Buy milk" }, with token).
-PUT /api/todos/:id: Toggle todo completion (with token).
-DELETE /api/todos/:id: Delete a todo (with token).
+* **POST** `/api/auth/register` → Register a user
 
-Deployment
-Deployed on Vercel:
+  ```json
+  { "username": "test", "password": "pass" }
+  ```
+* **POST** `/api/auth/login` → Log in and get JWT
 
-Configure environment variables in Vercel dashboard.
-Use vercel.json for serverless setup.
+  ```json
+  { "username": "test", "password": "pass" }
+  ```
 
-Testing
-Use Postman or Thunder Client to test endpoints. Ensure Authorization header is set for protected routes.
+### Todos (Require `Authorization: Bearer <token>`)
+
+* **GET** `/api/todos` → Get all todos
+* **POST** `/api/todos` → Create a todo
+
+  ```json
+  { "text": "Buy milk" }
+  ```
+* **PUT** `/api/todos/:id` → Toggle todo completion
+* **DELETE** `/api/todos/:id` → Delete a todo
+
+---
+
+## 🚀 Deployment on Vercel
+
+1. Push your repo to GitHub
+2. Connect repo to **Vercel Dashboard**
+3. Add environment variables in **Vercel → Project Settings → Environment Variables**
+4. Deploy!
+
+Example `vercel.json` (optional):
+
+```json
+{
+  "version": 2,
+  "builds": [
+    { "src": "index.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "index.js" }
+  ]
+}
+```
+
+---
+
+## 🧪 Testing
+
+* Use **Postman** or **Thunder Client**
+* Add `Authorization: Bearer <your_token>` in request headers for protected routes
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+```
+
+Do you also want me to add **badges** (like Node.js, MongoDB, Vercel deploy buttons, etc.) at the top of your README to make it look even more professional?
+```
