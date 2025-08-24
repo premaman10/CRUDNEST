@@ -1,3 +1,4 @@
+
 # 📝 Todo List API  
 
 A **RESTful API** for a Todo List application built with **Node.js, Express, MongoDB Atlas, and JWT authentication**.  
@@ -34,10 +35,7 @@ All routes are protected using **JWT-based authentication**.
 ## ⚙️ Setup  
 
 ### 1. Clone the Repository  
-```bash
-git clone https://github.com/premaman10/todo-api.git
-cd todo-api
-````
+
 
 ### 2. Install Dependencies
 
@@ -49,11 +47,7 @@ npm install
 
 Create a **.env** file in the project root:
 
-```env
-MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/todoDB?retryWrites=true&w=majority
-PORT=5000
-JWT_SECRET=your_jwt_secret
-```
+
 
 ### 4. Run Locally
 
@@ -91,6 +85,15 @@ npm run dev
 
 ---
 
+## 📘 API Documentation
+
+Access interactive **Swagger documentation** at `/api-docs`:
+
+* Local: `http://localhost:5000/api-docs`
+* Vercel: `https://todo-api.vercel.app/api-docs`
+
+---
+
 ## 🚀 Deployment on Vercel
 
 1. Push your repo to GitHub
@@ -125,9 +128,7 @@ Example `vercel.json` (optional):
 
 This project is licensed under the **MIT License**.
 
----
-
 ```
 
-Do you also want me to add **badges** (like Node.js, MongoDB, Vercel deploy buttons, etc.) at the top of your README to make it look even more professional?
+👉 Do you also want me to **add the Swagger setup instructions** (like how to configure `swagger-jsdoc` & `swagger-ui-express` in your Express app) inside the README, docs` is generated?
 ```
